@@ -1,0 +1,23 @@
+<!-- INCLUDE odlf_header.html -->
+
+	<h2>{L_ODLF_CG_TITLE}</h2>
+	<p>{L_ODLF_CG_TEXT}</p>
+	<form id="ucp" action="{U_ACTION}" method="post">
+		<fieldset>
+			<dl class="details">
+				<dt>{L_GROUP_NAME}{L_COLON}</dt>
+				<dd><input type="text" tabindex="1" class="inputbox autowidth" maxlength="10" name="group_name" size="20" title="{L_GROUP_NAME_EXPLAIN}" value="{GROUP_NAME}" /></dd>
+			</dl>
+			<dl class="details">
+				<dt>{L_GROUP_DESC}{L_COLON}</dt>
+				<dd><textarea id="group_desc" tabindex="3" class="inputbox" name="comment" cols="50" rows="3" >{GROUP_DESC}</textarea></dd>
+			</dl>
+		</fieldset>
+		<fieldset class="submit-buttons">
+			{S_HIDDEN_FIELDS}
+			<input type="submit" tabindex="2" accesskey="s" name="submit" value="{L_SUBMIT}" class="button1" />
+			{S_FORM_TOKEN}
+		</fieldset>
+	</form>
+
+<!-- INCLUDE odlf_footer.html -->

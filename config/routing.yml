@@ -1,0 +1,3 @@
+dakinquelia_odlf_controller:
+    path: /outils
+    defaults: { _controller: odlf.controller:handle_odlf }

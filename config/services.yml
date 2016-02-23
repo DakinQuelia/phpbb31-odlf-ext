@@ -1,0 +1,49 @@
+services:
+    dakinquelia.odlf.listener:
+        class: dakinquelia\odlf\event\listener
+        arguments:
+            - '@user'
+            - '@template'
+            - '@dbal.conn'          
+            - '@auth'
+            - '@controller.helper' 
+            - '@request'         
+            - '%core.root_path%'
+            - '%core.php_ext%'
+        tags:
+            - { name: event.listener }
+     dakinquelia.odlf.controller:
+         class: dakinquelia\odlf\controller\main
+         arguments:
+            - '@dakinquelia.odlf.core.odlf.create.group'
+            - '@dakinquelia.odlf.core.odlf.create.forum'
+            - '@template'
+            - '@user'
+            - '@auth'
+            - '@dbal.conn'
+            - '@request'
+            - '@controller.helper'
+            - '%core.root_path%'
+            - '%core.php_ext%'
+     dakinquelia.odlf.main:
+         class: dakinquelia\odlf\core\odlf_main
+         arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@request'
+            - '@controller.helper'
+            - '%core.php_ext%'
+            - '%core.root_path%'
+     dakinquelia.odlf.create.group:
+         class: dakinquelia\odlf\core\odlf_create_group
+         arguments:
+            - '@auth'
+            - '@template'
+            - '@user'
+            - '@dbal.conn'
+            - '@request'
+            - '@controller.helper'
+            - '%core.php_ext%'
+            - '%core.root_path%'
